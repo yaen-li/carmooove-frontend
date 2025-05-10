@@ -21,7 +21,7 @@
 
     <script>
     function notifyOwner() {
-      fetch("https://carmooove-backend.onrender.com", {
+      fetch("https://carmooove-backend.onrender.com/notify", {
         method: "POST"
       })
       .then(res => res.ok ? alert("Owner notified!") : alert("Failed to notify"))
