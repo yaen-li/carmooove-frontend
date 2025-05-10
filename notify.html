@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Car Mooove</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Blocking you?</h2>
+    <p>Click the honk button and the owner of car ABC123 will be notified.</p>
+    <a href="#" onclick="notifyOwner()" class="icon">
+        <img src="steering.jpg" alt="Car Honk Icon" width="100%">
+    </a>
+
+    <script>
+    function notifyOwner() {
+      fetch("https://car-notifier.onrender.com/notify", {
+        method: "POST"
+      })
+      .then(res => res.ok ? alert("Owner notified!") : alert("Failed to notify"))
+      .catch(() => alert("Error contacting server."));
+    }
+  </script>
+
+</body>
+</html>
